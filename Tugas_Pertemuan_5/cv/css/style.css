@@ -1,0 +1,131 @@
+@font-face {
+  font-family: 'futura';
+  src: url("futur.woff") format("woff")
+}
+
+h1, h2 {
+  margin-bottom: 0;
+  background-color: #F7D264;
+}
+
+p {
+  margin-top: 24px;
+}
+
+h2 {
+  padding-left: 10px;
+  margin-right: 320px;
+}
+
+body {
+  font-family: futura;
+  font-size: 12pt;
+  background-image: url(../img/ripples.png);
+}
+
+.container_12 {
+  border: 5px solid #F7D264;
+  border-radius: 50px;
+}
+
+.header {
+  padding-top: 24px;
+}
+
+.nama {
+  text-align: center;
+  height: 120px
+}
+
+.foto  {
+  height: 120px
+}
+
+.aboutmecontact {
+  margin-top: 24px;
+  height: 456px
+}
+
+.aboutme {
+  height: 216px
+}
+
+.contact {
+  margin-top: 24px;
+  height: 216px
+}
+
+.education {
+  margin-top: 24px;
+  height: 456px;
+}
+
+.skill {
+  margin-top: 24px;
+  height: 216px
+}
+
+.goal {
+  margin-top: 24px;
+  height: 216px
+}
+
+.copyright {
+  margin-top: 84px;
+  text-align: center;
+  height: 48px
+}
+
+.education p {
+  padding-left: 3px;
+  border-bottom: 3px solid #F7D264;
+  border-left: 3px solid #F7D264;
+}
+
+.foto img {
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 50px;
+}
+
+.skill ul, .contact ul {
+  list-style-type: none;
+}
+
+.skill ul li, .contact ul li, .goal ul li {
+  margin: 10px;
+}
+
+.skill .bar ul li{
+  background-color: #505050;
+}
+
+.contact ul li img {
+  height: 24px;
+  width: 24px
+}
+
+.skill .bar ul li p {
+  color: #FDEDBB;
+  margin: 0;
+}
+
+.skill .bar ul li .satu{
+  background-color: #FDEDBB;
+  width: 60%;
+}
+
+.skill .bar ul li .dua{
+  background-color: #FDEDBB;
+  width: 70%;
+}
+
+.skill .bar ul li .tiga{
+  background-color: #FDEDBB;
+  width: 90%;
+}
+
+.skill .bar ul li .empat{
+  background-color: #FDEDBB;
+  width: 80%;
+}
