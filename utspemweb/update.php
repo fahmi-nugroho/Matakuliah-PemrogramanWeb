@@ -16,8 +16,7 @@
       $stok = $_POST['stok_barang'];
       $harga = $_POST['harga_satuan'];
 
-      $sql = "UPDATE barang SET id_barang='$sku', nama_barang='$nama', id_kategori='$kategori', jumlah_stock='$stok', harga_satuan=$harga WHERE id_barang='$sku'";
-
+      $sql = "UPDATE barang SET id_barang='$sku', nama_barang='$nama', id_kategori=$kategori, jumlah_stock=$stok, harga_satuan=$harga WHERE id_barang='$sku'";
       $result = mysqli_query(connection(),$sql);
       if ($result) {
         echo "<script>
@@ -67,23 +66,18 @@
           <div class="form-group">
             <label for="input_kategori">Kategori</label>
             <select class="custom-select" id="input_kategori" name="kategori" required>
-              <?php
-                $id = $data['id_kategori'];
-                $query2 = "SELECT * FROM kategori WHERE id_kategori = $id";
-                $result2 = mysqli_query(connection(),$query2);
-                $data2 = mysqli_fetch_array($result2);
-              ?>
-              <option value="<?php echo $data['id_kategori'] ?>"><?php echo $data2['nama_kategori'] ?></option>
+
               <?php
                 $query1 = "SELECT * FROM kategori";
                 $result1 = mysqli_query(connection(),$query1);
-                $data1 = mysqli_fetch_array($result1);
-                $i = 1;
                 while ($data1 = mysqli_fetch_array($result1)) :
               ?>
-              <option value="<?php echo $i ?>"><?php echo $data1['nama_kategori'] ?></option>
+              <?php if ($data1['id_kategori']==$data['id_kategori']): ?>
+                <option value="<?php echo $data1['id_kategori'] ?>" selected><?php echo $data1['nama_kategori'] ?></option>
+              <?php else: ?>
+                <option value="<?php echo $data1['id_kategori'] ?>"><?php echo $data1['nama_kategori'] ?></option>
+              <?php endif; ?>
               <?php
-                $i++;
                 endwhile
               ?>
             </select>

@@ -1,6 +1,5 @@
 <?php
   include 'conn.php';
-
   if (isset($_POST['sku_barang'])) {
     $sku = $_POST['sku_barang'];
     $nama = $_POST['nama_barang'];
@@ -23,6 +22,9 @@
               window.location = 'index.php';
             </script>";
     }
+  }
+  if (isset($_GET['kategori'])) {
+    $pilihan = $_GET['kategori'];
   }
 ?>
 <!DOCTYPE html>
@@ -63,13 +65,10 @@
               <?php
                 $query1 = "SELECT * FROM kategori";
                 $result1 = mysqli_query(connection(),$query1);
-                $data1 = mysqli_fetch_array($result1);
-                $i = 1;
                 while ($data1 = mysqli_fetch_array($result1)) :
               ?>
-              <option value="<?php echo $i ?>"><?php echo $data1['nama_kategori'] ?></option>
+              <option value="<?php echo $data1['id_kategori'] ?>"><?php echo $data1['nama_kategori'] ?></option>
               <?php
-                $i++;
                 endwhile
               ?>
             </select>
