@@ -14,7 +14,6 @@
     $minimal = $_POST['minimal'];
     $maksimal = $_POST['maksimal'];
     $nama_sku = $_POST['sku_nama'];
-    // $query = "SELECT * FROM barang WHERE id_barang LIKE '%$nama_sku%' OR nama_barang LIKE '%$nama_sku%' AND (harga_satuan >= $minimal AND harga_satuan <= $maksimal)";
     $query = "SELECT * FROM barang WHERE";
     if (strcmp($nama_sku,"") != 0){
       $query = $query." (id_barang LIKE '%$nama_sku%' OR nama_barang LIKE '%$nama_sku%')";
@@ -36,7 +35,7 @@
       }
     }
     if ($kategori != 0) {
-      $query = $query." AND kategori = $kategori";;
+      $query = $query." AND id_kategori = $kategori";;
     }
     $result = mysqli_query(connection(),$query);
     // echo $query;
